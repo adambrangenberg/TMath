@@ -1,7 +1,7 @@
 {
   "name": "tmath",
-  "version": "1.0.0",
-  "description": "Add an advanced customisable calculator to your discordbot! :D",
+  "version": "1.0.4",
+  "description": "Add an advanced customizable calculator to your discordbot! :D",
   "main": "index.js",
   "scripts": {
     "test": "node index.js"

@@ -6,8 +6,9 @@
 </div>
 
 # Installation
-
-You need for this one discord-buttons 3.1.1 and Discord.JS latest =)
+### Requirements to use this package:
+- discord-buttons@3.1.1 
+- Discord.JS@latest
 
 ```
 $ npm i tmath
@@ -16,9 +17,10 @@ $ npm i discord.js@latest
 ```
 
 # Use
+This is an customizable calculator for discordbots
 
 ```js
-// If you have an commandhandler this shoud be in your mainfile ^^
+// If you have an commandhandler this should be in your mainfile 
 const { Client } = require("discord.js"); //get Discord.JS
 
 const client = new Client(); //define your Discord client
@@ -26,7 +28,7 @@ require("discord-buttons")(client); //get discord-buttons
 
 client.login("TOKEN"); //login with your bot
 
-// If you have an commandhander this is then in your commandfile ^^
+// If you have an commandhander this is then in your commandfile 
 const TMath = require("tmath");
 
 const calculator = new TMath({
@@ -38,4 +40,7 @@ const calculator = new TMath({
 
 await calculator.start(); // Reply
 ```
-### For support DM me on Discord (Adam ^^#7729), Supportserver: Cooming Soon
+### I've created this package because it was annoying to always make a pull request for the [weky](https://www.npmjs.com/package/weky) one
+<hr/>
+
+### For support DM me on Discord (Adam ^^#7729), Supportserver: Comming Soon
