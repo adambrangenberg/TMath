@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "@TigerbyteDev/discord-calculator-npm"
+    "url": "https://github.com/TigerbyteDev/TMath"
   },
   "keywords": [
     "discord",
