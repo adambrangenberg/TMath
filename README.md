@@ -43,4 +43,8 @@ await calculator.start(); // Reply
 ### I've created this package because it was annoying to always make a pull request for the [weky](https://www.npmjs.com/package/weky) one
 <hr/>
 
+### v2: Fixed some Bugs with Calculationreset and added Pi and x10
+
+<hr/>
+
 ### For support DM me on Discord (Adam ^^#7729), Supportserver: Comming Soon

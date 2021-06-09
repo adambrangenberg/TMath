@@ -3,9 +3,7 @@
 module.exports = class Calculator {
   constructor(options) {
     if (!options.message)
-      throw new TypeError(
-        "[TMath] Error: Missing argument message"
-      );
+      throw new TypeError("[TMath] Error: Missing argument message");
     this.message = options.message;
 
     let destroy = options.destroy;
@@ -15,14 +13,10 @@ module.exports = class Calculator {
     if (!options.invalid) invalid = "Invalid Calculation";
 
     if (typeof destroy !== "string")
-      throw new TypeError(
-        "[TMath] Error: destroy must be a string"
-      );
+      throw new TypeError("[TMath] Error: destroy must be a string");
 
     if (typeof invalid !== "string")
-      throw new TypeError(
-        "[TMath] Error: invalid must be a string"
-      );
+      throw new TypeError("[TMath] Error: invalid must be a string");
 
     this.invalid = invalid;
     this.destroy = destroy;
@@ -46,7 +40,7 @@ module.exports = class Calculator {
     let str = " ";
     let math = " ";
     let stringify = "```\n" + str + "\n```";
-    const calculator_ac = i(20);
+    const calculator_c = i(20);
     const calculator_e1 = i(20);
     const calculator_e2 = i(20);
     const calculator_uppercase = i(20);
@@ -69,12 +63,13 @@ module.exports = class Calculator {
     const calculator_equal = i(20);
     const calculator_backspace = i(20);
     const calc_irrc = i(20);
-    const empty_irrc = i(20);
+    const calculator_pi = i(20);
+    const calculator_starten = i(20);
 
     //Setup Buttonstyle
     const c = new MessageButton()
       .setLabel("C")
-      .setID(calculator_ac)
+      .setID(calculator_c)
       .setStyle("red");
     const e1 = new MessageButton()
       .setLabel("(")
@@ -100,7 +95,7 @@ module.exports = class Calculator {
       .setLabel("9️")
       .setID(calculator_9)
       .setStyle("gray");
-    const slash = new MessageButton()
+    const devide = new MessageButton()
       .setLabel("÷")
       .setID(calculator_devide)
       .setStyle("blurple");
@@ -164,16 +159,19 @@ module.exports = class Calculator {
       .setLabel("DC")
       .setID(calc_irrc)
       .setStyle("red");
-    const empty = new MessageButton()
-      .setLabel("\u200b")
-      .setID(empty_irrc)
-      .setStyle("gray")
-      .setDisabled();
+    const pi = new MessageButton()
+      .setLabel("π")
+      .setID(calculator_pi)
+      .setStyle("blurple");
+    const starten = new MessageButton()
+      .setLabel("×10")
+      .setID(calculator_starten)
+      .setStyle("blurple");
 
     //Setup Disasabled Buttons
     const qc = new MessageButton()
       .setLabel("C")
-      .setID(calculator_ac)
+      .setID(calculator_c)
       .setStyle("red")
       .setDisabled();
     const qe1 = new MessageButton()
@@ -206,7 +204,7 @@ module.exports = class Calculator {
       .setID(calculator_9)
       .setStyle("gray")
       .setDisabled();
-    const qslash = new MessageButton()
+    const qdevide = new MessageButton()
       .setLabel("÷")
       .setID(calculator_devide)
       .setStyle("blurple")
@@ -286,10 +284,15 @@ module.exports = class Calculator {
       .setID(calc_irrc)
       .setStyle("red")
       .setDisabled();
-    const qempty = new MessageButton()
-      .setLabel("\u200b")
-      .setID(empty_irrc)
-      .setStyle("gray")
+    const qpi = new MessageButton()
+      .setLabel("π")
+      .setID(calculator_pi)
+      .setStyle("blurple")
+      .setDisabled();
+    const qstarten = new MessageButton()
+      .setLabel("×10")
+      .setID(calculator_starten)
+      .setStyle("blurple")
       .setDisabled();
 
     //Startmessage
@@ -297,51 +300,33 @@ module.exports = class Calculator {
     this.message.channel
       .send(stringify, {
         components: [
-          { type: 1, components: [e1, e2, uppercase, proz, c] },
-          { type: 1, components: [seven, eight, nine, slash, destroy] },
-          { type: 1, components: [four, five, six, star, backspace] },
-          { type: 1, components: [one, two, three, minus, empty] },
-          { type: 1, components: [dot, zero, equal, plus, empty] },
+          { type: 1, components: [star, starten, seven, four, one] },
+          { type: 1, components: [minus, zero, eight, five, two] },
+          { type: 1, components: [plus, dot, nine, six, three] },
+          { type: 1, components: [devide, equal, c, backspace, destroy] },
+          { type: 1, components: [e1, e2, uppercase, pi, proz] },
         ],
       })
       .then(async (msg) => {
         async function edit() {
           msg.edit(stringify, {
             components: [
-              { type: 1, components: [e1, e2, uppercase, proz, c] },
-              {
-                type: 1,
-                components: [seven, eight, nine, slash, destroy],
-              },
-              { type: 1, components: [four, five, six, star, backspace] },
-              { type: 1, components: [one, two, three, minus, empty] },
-              { type: 1, components: [dot, zero, equal, plus, empty] },
+              { type: 1, components: [star, starten, seven, four, one] },
+              { type: 1, components: [minus, zero, eight, five, two] },
+              { type: 1, components: [plus, dot, nine, six, three] },
+              { type: 1, components: [devide, equal, c, backspace, destroy] },
+              { type: 1, components: [e1, e2, uppercase, pi, proz] },
             ],
           });
         }
         async function lock() {
           msg.edit(stringify, {
             components: [
-              {
-                type: 1,
-                components: [qe1, qe2, quppercase, qproz, qc],
-              },
-              {
-                type: 1,
-                components: [qseven, qeight, qnine, qslash, qdestroy],
-              },
-              {
-                type: 1,
-                components: [qfour, qfive, qsix, qstar, qbackspace],
-              },
-              {
-                type: 1,
-                components: [qone, qtwo, qthree, qminus, qempty],
-              },
-              {
-                type: 1,
-                components: [qdot, qzero, qequal, qplus, qempty],
-              },
+              { type: 1, components: [qstar, qstarten, qseven, qfour, qone] },
+              { type: 1, components: [qminus, qzero, qeight, qfive, qtwo] },
+              { type: 1, components: [qplus, qdot, qnine, qsix, qthree] },
+              { type: 1, components: [qdevide, qequal, qc, qbackspace, qdestroy] },
+              { type: 1, components: [qe1, qe2, quppercase, qpi, qproz] },
             ],
           });
         }
@@ -355,20 +340,18 @@ module.exports = class Calculator {
 
           if (btn.id === calculator_equal) {
             try {
-              let result = (await require("mathjs").evaluate(math)) + "";
-              //db.set(`${message.guild.id}.${message.author.id}.calc`, result);
-              str += " = " + result;
+              str += " = " + require("mathjs").evaluate(math) + "";
               stringify = "```\n" + str + "\n```";
               edit();
               str = "";
+              math = "";
               stringify = "```\n" + str + "\n```";
-              result = "";
               return;
             } catch (e) {
               str = this.invalid;
               stringify = "```\n" + str + "\n```";
               edit();
-
+              console.log(e);
               str = " ";
               stringify = "```\n" + str + "\n```";
             }
@@ -452,7 +435,7 @@ module.exports = class Calculator {
               str += ",";
               math += ".";
               break;
-            case calculator_ac:
+            case calculator_c:
               str = " ";
               math += " ";
               break;
@@ -464,11 +447,23 @@ module.exports = class Calculator {
               str += ")";
               math += ")";
               break;
+            case calculator_pi:
+              str += "π";
+              math += "pi";
+              break;
+            case calculator_starten:
+              str += "×10";
+              math += "*10";
+              break;
             case calculator_backspace:
-              if(str === " ") break;
+              if (str === " ") break;
               str = str.split("");
               str.pop();
               str = str.join("");
+
+              math = math.split("");
+              math.pop();
+              math = math.join("");
               break;
           }
 
