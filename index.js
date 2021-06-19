@@ -354,6 +354,7 @@ module.exports = class Calculator {
               console.log(e);
               str = " ";
               stringify = "```\n" + str + "\n```";
+              return;
             }
           }
 
