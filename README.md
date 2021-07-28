@@ -43,6 +43,7 @@ await calculator.start(); // Reply
 ```
 
 ### v2.1.0: Fixed button defer and only usable by message.author, support for discord-buttons v4
+### v2.1.1: Fixed bug with math string weren't cleared after an invalid calculation
 
 <hr/>
 
