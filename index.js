@@ -8,9 +8,11 @@ module.exports = class Calculator {
 
     let destroy = options.destroy;
     let invalid = options.invalid;
+    let notauthor = options.notauthor;
 
     if (!options.destroy) destroy = "Calculator Locked";
     if (!options.invalid) invalid = "Invalid Calculation";
+    if (!options.notauthor) notauthor = "Only the author can use the calculator! Run the command to create you're own.";
 
     if (typeof destroy !== "string")
       throw new TypeError("[TMath] Error: destroy must be a string");
@@ -23,7 +25,9 @@ module.exports = class Calculator {
   }
 
   async start() {
-    const { MessageButton } = require("discord-buttons");
+    const {
+      MessageButton
+    } = require("discord-buttons");
     //Get I
     function i(length) {
       var randomChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -299,34 +303,76 @@ module.exports = class Calculator {
     const filter = (m) => m.clicker.user.id == this.message.author.id;
     this.message.channel
       .send(stringify, {
-        components: [
-          { type: 1, components: [star, starten, seven, four, one] },
-          { type: 1, components: [minus, zero, eight, five, two] },
-          { type: 1, components: [plus, dot, nine, six, three] },
-          { type: 1, components: [devide, equal, c, backspace, destroy] },
-          { type: 1, components: [e1, e2, uppercase, pi, proz] },
+        components: [{
+            type: 1,
+            components: [star, starten, seven, four, one]
+          },
+          {
+            type: 1,
+            components: [minus, zero, eight, five, two]
+          },
+          {
+            type: 1,
+            components: [plus, dot, nine, six, three]
+          },
+          {
+            type: 1,
+            components: [devide, equal, c, backspace, destroy]
+          },
+          {
+            type: 1,
+            components: [e1, e2, uppercase, pi, proz]
+          },
         ],
       })
       .then(async (msg) => {
         async function edit() {
           msg.edit(stringify, {
-            components: [
-              { type: 1, components: [star, starten, seven, four, one] },
-              { type: 1, components: [minus, zero, eight, five, two] },
-              { type: 1, components: [plus, dot, nine, six, three] },
-              { type: 1, components: [devide, equal, c, backspace, destroy] },
-              { type: 1, components: [e1, e2, uppercase, pi, proz] },
+            components: [{
+                type: 1,
+                components: [star, starten, seven, four, one]
+              },
+              {
+                type: 1,
+                components: [minus, zero, eight, five, two]
+              },
+              {
+                type: 1,
+                components: [plus, dot, nine, six, three]
+              },
+              {
+                type: 1,
+                components: [devide, equal, c, backspace, destroy]
+              },
+              {
+                type: 1,
+                components: [e1, e2, uppercase, pi, proz]
+              },
             ],
           });
         }
         async function lock() {
           msg.edit(stringify, {
-            components: [
-              { type: 1, components: [qstar, qstarten, qseven, qfour, qone] },
-              { type: 1, components: [qminus, qzero, qeight, qfive, qtwo] },
-              { type: 1, components: [qplus, qdot, qnine, qsix, qthree] },
-              { type: 1, components: [qdevide, qequal, qc, qbackspace, qdestroy] },
-              { type: 1, components: [qe1, qe2, quppercase, qpi, qproz] },
+            components: [{
+                type: 1,
+                components: [qstar, qstarten, qseven, qfour, qone]
+              },
+              {
+                type: 1,
+                components: [qminus, qzero, qeight, qfive, qtwo]
+              },
+              {
+                type: 1,
+                components: [qplus, qdot, qnine, qsix, qthree]
+              },
+              {
+                type: 1,
+                components: [qdevide, qequal, qc, qbackspace, qdestroy]
+              },
+              {
+                type: 1,
+                components: [qe1, qe2, quppercase, qpi, qproz]
+              },
             ],
           });
         }
@@ -336,6 +382,7 @@ module.exports = class Calculator {
 
         //If Button presser --> run validation
         calc.on("collect", async (btn) => {
+          if (btn.clicker.id !== this.message.author.id) return btn.reply.send(this.notauthor, { ephemeral: true })
           btn.reply.defer();
 
           if (btn.id === calculator_equal) {

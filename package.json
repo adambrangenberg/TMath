@@ -1,6 +1,6 @@
 {
   "name": "tmath",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Add an advanced customizable calculator to your discordbot! :D",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "discord-buttons": "^3.1.1",
+    "discord-buttons": "^4.0.0",
+    "discord.js": "^12.5.3",
     "mathjs": "^9.4.2"
   }
 }

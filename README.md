@@ -7,13 +7,13 @@
 
 # Installation
 ### Requirements to use this package:
-- discord-buttons@3.1.1 
-- Discord.JS@latest
+- discord-buttons v4
+- Discord.JS v12
 
 ```
 $ npm i tmath
-$ npm i discord-buttons@3.1.1
-$ npm i discord.js@latest
+$ npm i discord-buttons
+$ npm i discord.js
 ```
 
 # Use
@@ -35,15 +35,14 @@ const calculator = new TMath({
   //Setup
   destroy: "Oh no, you locked me! :O", // Optional, default is "Calculator Locked"
   invalid: "Next time just put in a valid calculation!", // Optional, default is "Invalid Calculation"
+  notauthor: "You aren't the calculatorowner c.c", // Optional, default is "Only the author can use the calculator! Run the command to create you're own."
   message: message, // Required, the message that triggered the Messageevent/Command
 });
 
 await calculator.start(); // Reply
 ```
-### I've created this package because it was annoying to always make a pull request for the [weky](https://www.npmjs.com/package/weky) one
-<hr/>
 
-### v2: Fixed some Bugs with Calculationreset and added Pi and x10
+### v2.1.0: Fixed button defer and only usable by message.author, support for discord-buttons v4
 
 <hr/>
 
