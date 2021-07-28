@@ -336,7 +336,7 @@ module.exports = class Calculator {
 
         //If Button presser --> run validation
         calc.on("collect", async (btn) => {
-          btn.defer();
+          btn.reply.defer();
 
           if (btn.id === calculator_equal) {
             try {
