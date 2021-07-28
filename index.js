@@ -9,10 +9,17 @@ module.exports = class Calculator {
     let destroy = options.destroy;
     let invalid = options.invalid;
     let notauthor = options.notauthor;
+    let deactivatemessage = options.deactivatemessage;
+    let deactivatetime = options.deactivatetime;
 
     if (!options.destroy) destroy = "Calculator Locked";
     if (!options.invalid) invalid = "Invalid Calculation";
     if (!options.notauthor) notauthor = "Only the author can use the calculator! Run the command to create you're own.";
+    if (!options.deactivatemessage) deactivatemessage = "The Calculator got deactivated";
+
+    const tenmin = 600000
+    if (!options.deactivatetime) deactivatetime = tenmin;
+
 
     if (typeof destroy !== "string")
       throw new TypeError("[TMath] Error: destroy must be a string");
@@ -20,14 +27,27 @@ module.exports = class Calculator {
     if (typeof invalid !== "string")
       throw new TypeError("[TMath] Error: invalid must be a string");
 
+    if (typeof notauthor !== "string")
+      throw new TypeError("[TMath] Error: notauthor must be a string");
+
+    if (typeof deactivatemessage !== "string")
+      throw new TypeError("[TMath] Error: deactivatemessage must be a string");
+
+    if (typeof deactivatetime !== "number")
+      throw new TypeError("[TMath] Error: deactivatetime must be a number");
+
     this.invalid = invalid;
     this.destroy = destroy;
+    this.notauthor = notauthor;
+    this.deactivatemessage = deactivatemessage;
+    this.deactivatetime = deactivatetime;
   }
 
   async start() {
     const {
       MessageButton
     } = require("discord-buttons");
+    const wait = require("util").promisify(setTimeout);
     //Get I
     function i(length) {
       var randomChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -382,7 +402,9 @@ module.exports = class Calculator {
 
         //If Button presser --> run validation
         calc.on("collect", async (btn) => {
-          if (btn.clicker.id !== this.message.author.id) return btn.reply.send(this.notauthor, { ephemeral: true })
+          if (btn.clicker.id !== this.message.author.id) return btn.reply.send(this.notauthor, {
+            ephemeral: true
+          })
           btn.reply.defer();
 
           if (btn.id === calculator_equal) {
@@ -519,6 +541,11 @@ module.exports = class Calculator {
           stringify = "```\n" + str + "\n```";
           edit();
         });
-      });
+
+        // If time over, deactivate
+        await wait(this.deactivatetime);
+        this.message.channel.send(this.deactivatemessage);
+        msg.delete();
+      })
   }
 };

@@ -36,14 +36,15 @@ const calculator = new TMath({
   destroy: "Oh no, you locked me! :O", // Optional, default is "Calculator Locked"
   invalid: "Next time just put in a valid calculation!", // Optional, default is "Invalid Calculation"
   notauthor: "You aren't the calculatorowner c.c", // Optional, default is "Only the author can use the calculator! Run the command to create you're own."
+  deactivatemessasge: "I deactivated me :x", // Optional, default is "The Calculator got deactivated"
+  deactivatetime: 1000000, // Optional, default are 10 minutes
   message: message, // Required, the message that triggered the Messageevent/Command
 });
 
 await calculator.start(); // Reply
 ```
 
-### v2.1.0: Fixed button defer and only usable by message.author, support for discord-buttons v4
-### v2.1.1: Fixed bug with math string weren't cleared after an invalid calculation
+### v2.2.0 Outtime for calculator 
 
 <hr/>
 
