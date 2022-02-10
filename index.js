@@ -1,11 +1,10 @@
-//module.exports.Calculator = require('./calculator.js');
-
 module.exports = class Calculator {
   constructor(options) {
-    if (!options.message)
-      throw new TypeError("[TMath] Error: Missing argument message");
-    this.message = options.message;
-
+    if (!options.request)
+      throw new TypeError("[TMath] Error: Missing argument request");
+    this.request = options.request;
+    this.user = options.user
+    
     let destroy = options.destroy;
     let invalid = options.invalid;
     let notauthor = options.notauthor;
@@ -46,7 +45,7 @@ module.exports = class Calculator {
   async start() {
     const {
       MessageButton
-    } = require("discord-buttons");
+    } = require("discord.js");
     const wait = require("util").promisify(setTimeout);
     //Get I
     function i(length) {
@@ -320,7 +319,7 @@ module.exports = class Calculator {
       .setDisabled();
 
     //Startmessage
-    const filter = (m) => m.clicker.user.id == this.message.author.id;
+    const filter = (m) => m.clicker.user.id == this.user.id;
     this.message.channel
       .send(stringify, {
         components: [{
@@ -402,7 +401,7 @@ module.exports = class Calculator {
 
         //If Button presser --> run validation
         calc.on("collect", async (btn) => {
-          if (btn.clicker.id !== this.message.author.id) return btn.reply.send(this.notauthor, {
+          if (btn.clicker.id !== this.user.id) return btn.reply.send(this.notauthor, {
             ephemeral: true
           })
           btn.reply.defer();
