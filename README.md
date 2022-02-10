@@ -7,16 +7,14 @@
 
 # Installation
 ### Requirements to use this package:
-- discord-buttons v4
-- Discord.JS v12
+- Discord.JS v13
 
 ```
 $ npm i tmath
-$ npm i discord-buttons
 $ npm i discord.js
 ```
 
-# Use
+# Usage
 This is an customizable calculator for discordbots
 
 ```js
@@ -24,7 +22,6 @@ This is an customizable calculator for discordbots
 const { Client } = require("discord.js"); //get Discord.JS
 
 const client = new Client(); //define your Discord client
-require("discord-buttons")(client); //get discord-buttons
 
 client.login("TOKEN"); //login with your bot
 
@@ -38,13 +35,14 @@ const calculator = new TMath({
   notauthor: "You aren't the calculatorowner c.c", // Optional, default is "Only the author can use the calculator! Run the command to create you're own."
   deactivatemessasge: "I deactivated me :x", // Optional, default is "The Calculator got deactivated"
   deactivatetime: 1000000, // Optional, default are 10 minutes
-  message: message, // Required, the message that triggered the Messageevent/Command
+  request: message, // Required, the message or interaction that triggered the Messageevent/Command
+  user: message.author // The user who called the request
 });
 
 await calculator.start(); // Reply
 ```
 
-### v2.2.0 Outtime for calculator 
+### v3.0.0 v13 Support 
 
 <hr/>
 

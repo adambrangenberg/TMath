@@ -92,236 +92,237 @@ module.exports = class Calculator {
     //Setup Buttonstyle
     const c = new MessageButton()
       .setLabel("C")
-      .setID(calculator_c)
-      .setStyle("red");
+      .setCustomId(calculator_c)
+      .setStyle("DANGER");
     const e1 = new MessageButton()
       .setLabel("(")
-      .setID(calculator_e1)
-      .setStyle("blurple");
+      .setCustomId(calculator_e1)
+      .setStyle("PRIMARY");
     const e2 = new MessageButton()
       .setLabel(")")
-      .setID(calculator_e2)
-      .setStyle("blurple");
+      .setCustomId(calculator_e2)
+      .setStyle("PRIMARY");
     const uppercase = new MessageButton()
       .setLabel("^")
-      .setID(calculator_uppercase)
-      .setStyle("blurple");
+      .setCustomId(calculator_uppercase)
+      .setStyle("PRIMARY");
     const seven = new MessageButton()
       .setLabel("7️")
-      .setID(calculator_7)
-      .setStyle("gray");
+      .setCustomId(calculator_7)
+      .setStyle("SECONDARY");
     const eight = new MessageButton()
       .setLabel("8️")
-      .setID(calculator_8)
-      .setStyle("gray");
+      .setCustomId(calculator_8)
+      .setStyle("SECONDARY");
     const nine = new MessageButton()
       .setLabel("9️")
-      .setID(calculator_9)
-      .setStyle("gray");
+      .setCustomId(calculator_9)
+      .setStyle("SECONDARY");
     const devide = new MessageButton()
       .setLabel("÷")
-      .setID(calculator_devide)
-      .setStyle("blurple");
+      .setCustomId(calculator_devide)
+      .setStyle("PRIMARY");
     const four = new MessageButton()
       .setLabel("4️")
-      .setID(calculator_4)
-      .setStyle("gray");
+      .setCustomId(calculator_4)
+      .setStyle("SECONDARY");
     const five = new MessageButton()
       .setLabel("5️")
-      .setID(calculator_5)
-      .setStyle("gray");
+      .setCustomId(calculator_5)
+      .setStyle("SECONDARY");
     const six = new MessageButton()
       .setLabel("6️")
-      .setID(calculator_6)
-      .setStyle("gray");
+      .setCustomId(calculator_6)
+      .setStyle("SECONDARY");
     const star = new MessageButton()
       .setLabel("×")
-      .setID(calculator_star)
-      .setStyle("blurple");
+      .setCustomId(calculator_star)
+      .setStyle("PRIMARY");
     const one = new MessageButton()
       .setLabel("1️")
-      .setID(calculator_1)
-      .setStyle("gray");
+      .setCustomId(calculator_1)
+      .setStyle("SECONDARY");
     const two = new MessageButton()
       .setLabel("2️")
-      .setID(calculator_2)
-      .setStyle("gray");
+      .setCustomId(calculator_2)
+      .setStyle("SECONDARY");
     const three = new MessageButton()
       .setLabel("3️")
-      .setID(calculator_3)
-      .setStyle("gray");
+      .setCustomId(calculator_3)
+      .setStyle("SECONDARY");
     const minus = new MessageButton()
       .setLabel("-")
-      .setID(calculator_minus)
-      .setStyle("blurple");
+      .setCustomId(calculator_minus)
+      .setStyle("PRIMARY");
     const zero = new MessageButton()
       .setLabel("0️")
-      .setID(calculator_0)
-      .setStyle("gray");
+      .setCustomId(calculator_0)
+      .setStyle("SECONDARY");
     const dot = new MessageButton()
       .setLabel(",")
-      .setID(calculator_dot)
-      .setStyle("blurple");
+      .setCustomId(calculator_dot)
+      .setStyle("PRIMARY");
     const equal = new MessageButton()
       .setLabel("=")
-      .setID(calculator_equal)
-      .setStyle("green");
+      .setCustomId(calculator_equal)
+      .setStyle("SUCCESS");
     const plus = new MessageButton()
       .setLabel("+")
-      .setID(calculator_plus)
-      .setStyle("blurple");
+      .setCustomId(calculator_plus)
+      .setStyle("PRIMARY");
     const proz = new MessageButton()
       .setLabel("%")
-      .setID(calculator_proz)
-      .setStyle("blurple");
+      .setCustomId(calculator_proz)
+      .setStyle("PRIMARY");
     const backspace = new MessageButton()
       .setLabel("Del")
-      .setID(calculator_backspace)
-      .setStyle("red");
+      .setCustomId(calculator_backspace)
+      .setStyle("DANGER");
     const destroy = new MessageButton()
       .setLabel("DC")
-      .setID(calc_irrc)
-      .setStyle("red");
+      .setCustomId(calc_irrc)
+      .setStyle("DANGER");
     const pi = new MessageButton()
       .setLabel("π")
-      .setID(calculator_pi)
-      .setStyle("blurple");
+      .setCustomId(calculator_pi)
+      .setStyle("PRIMARY");
     const starten = new MessageButton()
       .setLabel("×10")
-      .setID(calculator_starten)
-      .setStyle("blurple");
+      .setCustomId(calculator_starten)
+      .setStyle("PRIMARY");
 
     //Setup Disasabled Buttons
     const qc = new MessageButton()
       .setLabel("C")
-      .setID(calculator_c)
-      .setStyle("red")
-      .setDisabled();
+      .setCustomId(calculator_c)
+      .setStyle("DANGER")
+      .setDisabled(true);
     const qe1 = new MessageButton()
       .setLabel("(")
-      .setID(calculator_e1)
-      .setStyle("blurple")
-      .setDisabled();
+      .setCustomId(calculator_e1)
+      .setStyle("PRIMARY")
+      .setDisabled(true);
     const qe2 = new MessageButton()
       .setLabel(")")
-      .setID(calculator_e2)
-      .setStyle("blurple")
-      .setDisabled();
+      .setCustomId(calculator_e2)
+      .setStyle("PRIMARY")
+      .setDisabled(true);
     const quppercase = new MessageButton()
       .setLabel("^")
-      .setID(calculator_uppercase)
-      .setStyle("blurple")
-      .setDisabled();
+      .setCustomId(calculator_uppercase)
+      .setStyle("PRIMARY")
+      .setDisabled(true);
     const qseven = new MessageButton()
       .setLabel("7️")
-      .setID(calculator_7)
-      .setStyle("gray")
-      .setDisabled();
+      .setCustomId(calculator_7)
+      .setStyle("SECONDARY")
+      .setDisabled(true);
     const qeight = new MessageButton()
       .setLabel("8️")
-      .setID(calculator_8)
-      .setStyle("gray")
-      .setDisabled();
+      .setCustomId(calculator_8)
+      .setStyle("SECONDARY")
+      .setDisabled(true);
     const qnine = new MessageButton()
       .setLabel("9️")
-      .setID(calculator_9)
-      .setStyle("gray")
-      .setDisabled();
+      .setCustomId(calculator_9)
+      .setStyle("SECONDARY")
+      .setDisabled(true);
     const qdevide = new MessageButton()
       .setLabel("÷")
-      .setID(calculator_devide)
-      .setStyle("blurple")
-      .setDisabled();
+      .setCustomId(calculator_devide)
+      .setStyle("PRIMARY")
+      .setDisabled(true);
     const qfour = new MessageButton()
       .setLabel("4️")
-      .setID(calculator_4)
-      .setStyle("gray")
-      .setDisabled();
+      .setCustomId(calculator_4)
+      .setStyle("SECONDARY")
+      .setDisabled(true);
     const qfive = new MessageButton()
       .setLabel("5️")
-      .setID(calculator_5)
-      .setStyle("gray")
-      .setDisabled();
+      .setCustomId(calculator_5)
+      .setStyle("SECONDARY")
+      .setDisabled(true);
     const qsix = new MessageButton()
       .setLabel("6️")
-      .setID(calculator_6)
-      .setStyle("gray")
-      .setDisabled();
+      .setCustomId(calculator_6)
+      .setStyle("SECONDARY")
+      .setDisabled(true);
     const qstar = new MessageButton()
       .setLabel("×")
-      .setID(calculator_star)
-      .setStyle("blurple")
-      .setDisabled();
+      .setCustomId(calculator_star)
+      .setStyle("PRIMARY")
+      .setDisabled(true);
     const qone = new MessageButton()
       .setLabel("1️")
-      .setID(calculator_1)
-      .setStyle("gray")
-      .setDisabled();
+      .setCustomId(calculator_1)
+      .setStyle("SECONDARY")
+      .setDisabled(true);
     const qtwo = new MessageButton()
       .setLabel("2️")
-      .setID(calculator_2)
-      .setStyle("gray")
-      .setDisabled();
+      .setCustomId(calculator_2)
+      .setStyle("SECONDARY")
+      .setDisabled(true);
     const qthree = new MessageButton()
       .setLabel("3️")
-      .setID(calculator_3)
-      .setStyle("gray")
-      .setDisabled();
+      .setCustomId(calculator_3)
+      .setStyle("SECONDARY")
+      .setDisabled(true);
     const qminus = new MessageButton()
       .setLabel("-")
-      .setID(calculator_minus)
-      .setStyle("blurple")
-      .setDisabled();
+      .setCustomId(calculator_minus)
+      .setStyle("PRIMARY")
+      .setDisabled(true);
     const qzero = new MessageButton()
       .setLabel("0️")
-      .setID(calculator_0)
-      .setStyle("gray")
-      .setDisabled();
+      .setCustomId(calculator_0)
+      .setStyle("SECONDARY")
+      .setDisabled(true);
     const qdot = new MessageButton()
       .setLabel(",")
-      .setID(calculator_dot)
-      .setStyle("blurple")
-      .setDisabled();
+      .setCustomId(calculator_dot)
+      .setStyle("PRIMARY")
+      .setDisabled(true);
     const qequal = new MessageButton()
       .setLabel("=")
-      .setID(calculator_equal)
-      .setStyle("green")
-      .setDisabled();
+      .setCustomId(calculator_equal)
+      .setStyle("SUCCESS")
+      .setDisabled(true);
     const qplus = new MessageButton()
       .setLabel("+")
-      .setID(calculator_plus)
-      .setStyle("blurple")
-      .setDisabled();
+      .setCustomId(calculator_plus)
+      .setStyle("PRIMARY")
+      .setDisabled(true);
     const qproz = new MessageButton()
       .setLabel("%")
-      .setID(calculator_proz)
-      .setStyle("blurple")
-      .setDisabled();
+      .setCustomId(calculator_proz)
+      .setStyle("PRIMARY")
+      .setDisabled(true);
     const qbackspace = new MessageButton()
       .setLabel("Del")
-      .setID(calculator_backspace)
-      .setStyle("red")
-      .setDisabled();
+      .setCustomId(calculator_backspace)
+      .setStyle("DANGER")
+      .setDisabled(true);
     const qdestroy = new MessageButton()
       .setLabel("DC")
-      .setID(calc_irrc)
-      .setStyle("red")
-      .setDisabled();
+      .setCustomId(calc_irrc)
+      .setStyle("DANGER")
+      .setDisabled(true);
     const qpi = new MessageButton()
       .setLabel("π")
-      .setID(calculator_pi)
-      .setStyle("blurple")
-      .setDisabled();
+      .setCustomId(calculator_pi)
+      .setStyle("PRIMARY")
+      .setDisabled(true);
     const qstarten = new MessageButton()
       .setLabel("×10")
-      .setID(calculator_starten)
-      .setStyle("blurple")
-      .setDisabled();
+      .setCustomId(calculator_starten)
+      .setStyle("PRIMARY")
+      .setDisabled(true);
 
     //Startmessage
-    const filter = (m) => m.clicker.user.id == this.user.id;
+    const filter = (m) => m.user.id == this.user.id;
     this.message.channel
-      .send(stringify, {
+      .send({
+        content: stringify,
         components: [{
             type: 1,
             components: [star, starten, seven, four, one]
@@ -371,7 +372,8 @@ module.exports = class Calculator {
           });
         }
         async function lock() {
-          msg.edit(stringify, {
+          msg.edit({
+            content: stringify,
             components: [{
                 type: 1,
                 components: [qstar, qstarten, qseven, qfour, qone]
@@ -401,12 +403,13 @@ module.exports = class Calculator {
 
         //If Button presser --> run validation
         calc.on("collect", async (btn) => {
-          if (btn.clicker.id !== this.user.id) return btn.reply.send(this.notauthor, {
+          if (btn.user.id !== this.user.id) return btn.reply({ 
+            content: this.notauthor, 
             ephemeral: true
           })
-          btn.reply.defer();
+          btn.deferUpdate();
 
-          if (btn.id === calculator_equal) {
+          if (btn.customId === calculator_equal) {
             try {
               str += " = " + require("mathjs").evaluate(math) + "";
               stringify = "```\n" + str + "\n```";
@@ -427,7 +430,7 @@ module.exports = class Calculator {
             }
           }
 
-          if (btn.id === calc_irrc) {
+          if (btn.customId === calc_irrc) {
             str = this.destroy;
             stringify = "```\n" + str + "\n```";
             edit();
@@ -436,7 +439,7 @@ module.exports = class Calculator {
             return;
           }
 
-          switch (btn.id) {
+          switch (btn.customId) {
             case calculator_0:
               str += "0";
               math += "0";
